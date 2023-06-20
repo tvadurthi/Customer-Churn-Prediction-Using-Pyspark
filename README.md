@@ -63,18 +63,23 @@ We will be using the Telco Customer Churn dataset. It consists of 7043 rows, whe
 **Methodologies Used:**
 
 **Power BI:**
+
 We have used an interactive Power BI dashboard and visualization for insights.
 
 **Python:-**
+
 We build machine learning models to predict customer churn based on our dataset using python.We have used pyspark for data pre processing and model building. The dataset is in tabular excel format. A spark session is initiated and the data is read into a pyspark dataframe in multiline format. The columns are mapped to label indices by the label (string) indexer followed by pipelining before getting encoded. The categorical data is encoded and vectorized using the vector assembler. The final data frame which is used to build and test models consists of the vectorized features along with their labeled index and the encoded target(customer churn) variable. Customer churn ‘Yes’ is encoded as ‘1’ and customer churn ‘No’ is encoded as ‘0’. The dataset is split into a 60:40 train to test ratio. The machine learning algorithms used for building the models are logistic regression and naive bayes. In order to prevent overfit of data in the logistic regression model, a regularization parameter is used. The optimum regularization parameter is chosen by selecting the one with the lowest hold out cross validation error. In the naive bayes model, the multinomial classification is used along with laplace smoothing. The models created make predictions on test data.These predictions are used to evaluate models through metrics such as confusion matrix, accuracy and area under the true positive vs false positive ROC curves. Through these ROC curves, suitable classification threshold values can be selected based on different scenarios.
 
 **Naive Bayes:-**
+
 It is a classification technique based on Bayes’ Theorem with an assumption of independence among predictors. In simple terms, a Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature.Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, Naive Bayes is known to outperform even highly sophisticated classification methods.
 
 **Logistic Regression:-**
+
 This type of statistical analysis (also known as logit model) is often used for predictive analytics and modeling, and extends to applications in machine learning. In this analytics approach, the dependent variable is finite or categorical: either A or B (binary regression) or a range of finite options A, B, C or D (multinomial regression). It is used in statistical software to understand the relationship between the dependent variable and one or more independent variables by estimating probabilities using a logistic regression equation. This type of analysis can help you predict the likelihood of an event happening or a choice being made
 
 **Results:-**
+
 ●	As inferred from different visualizations and graphs that the customer churn rate can be decreased if customers are offered a 2 year contract and the churn rate decreases by 50% when the customer opts multiple lines 
 
 ●	People having very high tenure or very less tenure are leaving company 
